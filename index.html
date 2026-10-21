@@ -1458,6 +1458,11 @@
         frase logo depois de ouvir.
       </footer>
     </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js");
+      }
+    </script>
     <!-- 1º: dados dos áudios (define a variável A) -->
     <script src="js/dados/audio.js"></script>
     <!-- 2º: lógica do player (usa A) -->

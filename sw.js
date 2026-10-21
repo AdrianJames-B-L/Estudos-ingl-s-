@@ -6,9 +6,9 @@ const ARQUIVOS = [
     "js/app/player.js",
     "js/dados/audio.js",
     "./manifest.json",
-    "./icons/favicon.ico",
-    "./icons/android-chrome-192x192.png",
-    "./icons/android-chrome-512x512.png"
+    "./img/favicon.ico",
+    "./img/android-chrome-192x192.png",
+    "./img/android-chrome-512x512.png"
 ];
 
 self.addEventListener("install", e => {

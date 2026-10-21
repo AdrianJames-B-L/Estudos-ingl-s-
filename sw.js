@@ -3,9 +3,12 @@ const ARQUIVOS = [
     "./",
     "./index.html",
     "css/style.css",
-    "js/app/player.js.js",
+    "js/app/player.js",
     "js/dados/audio.js",
-    "./manifest.json"
+    "./manifest.json",
+    "./icons/favicon.ico",
+    "./icons/android-chrome-192x192.png",
+    "./icons/android-chrome-512x512.png"
 ];
 
 self.addEventListener("install", e => {

@@ -1,0 +1,82 @@
+/* Reset mínimo */
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; }
+/* Layout: single reading column; every phrase is one big tap target, play button on the left. */
+:root {
+  --bg: #F2F5FA;
+  --surface: #FFFFFF;
+  --ink: #14213D;
+  --muted: #566277;
+  --line: #D9E0EC;
+  --accent: #1F4FD8;
+  --accent-ink: #FFFFFF;
+  --hl: #E4ECFF;
+  --font-display: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1524; --surface: #151E31; --ink: #E8EDF7; --muted: #9AA7BF;
+    --line: #26324A; --accent: #7AA2FF; --accent-ink: #0E1524; --hl: #1D2B4A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1524; --surface: #151E31; --ink: #E8EDF7; --muted: #9AA7BF;
+  --line: #26324A; --accent: #7AA2FF; --accent-ink: #0E1524; --hl: #1D2B4A;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+h1, h2, p, ol { margin: 0; }
+.list { padding: 0; }
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+header { display: flex; flex-direction: column; gap: 10px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 8vw, 42px); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
+.lead { color: var(--muted); max-width: 52ch; }
+.tools { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-top: 6px; }
+.chip, .seg button, .all {
+  font: inherit; font-size: 14px; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; min-height: 40px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.seg { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
+.seg-group { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.seg button { border: 0; border-radius: 0; background: transparent; padding: 8px 14px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.sec { display: flex; flex-direction: column; gap: 10px; }
+.sec-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 21px; letter-spacing: -0.01em; text-wrap: balance; min-width: 0; }
+.all { font-size: 13px; padding: 6px 12px; min-height: 34px; color: var(--accent); flex: none; }
+.all[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.list { list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.list li + li { border-top: 1px solid var(--line); }
+.row {
+  all: unset; box-sizing: border-box; width: 100%; cursor: pointer;
+  display: flex; align-items: center; gap: 14px; padding: 12px 14px;
+}
+.row:hover { background: var(--bg); }
+.row.playing { background: var(--hl); }
+.row:focus-visible, .chip:focus-visible, .seg button:focus-visible, .all:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.btn {
+  flex: none; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-ink);
+  display: grid; place-items: center;
+}
+.btn svg { width: 22px; height: 22px; grid-area: 1 / 1; }
+.i-stop { display: none; }
+.row.playing .i-play { display: none; }
+.row.playing .i-stop { display: block; }
+.txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.en { font-weight: 700; font-size: 18px; line-height: 1.3; overflow-wrap: anywhere; }
+.pt { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; transition: filter .2s; }
+.num { flex: none; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; align-self: flex-start; padding-top: 4px; }
+body.hide-pt .row:not(.revealed) .pt { filter: blur(6px); user-select: none; }
+footer { color: var(--muted); font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { .pt { transition: none; } }

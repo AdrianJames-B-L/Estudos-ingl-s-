@@ -3,7 +3,7 @@
   "short_name": "",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#e8edf7",
+  "background_color": "#f2f5fa",
   "scope": "./",
   "id": "./index.html",
   "lang": "pt-BR",

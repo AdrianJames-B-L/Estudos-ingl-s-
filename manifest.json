@@ -2,7 +2,7 @@
   "name": "Estudos Inglês",
   "short_name": "Ingles",
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#1f4fd8ff",
   "background_color": "#1f4fd8ff",
   "scope": "./",

@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "Estudos Inglês",
+  "name": "Estudo inglês",
+  "short_name": "",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#e8edf7",

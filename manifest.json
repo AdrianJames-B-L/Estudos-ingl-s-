@@ -3,7 +3,7 @@
   "short_name": "Estudos Inglês",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#e8edf7",
+  "background_color": "#00000",
   "scope": "./",
   "id": "./index.html",
   "lang": "pt-BR",

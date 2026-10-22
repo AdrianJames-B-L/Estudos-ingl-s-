@@ -4,6 +4,7 @@
   "start_url": "./index.html",
   "display": "fullascreen",
   "background_color": "#e8edf7",
+  "theme_color": "",
   "scope": "./",
   "id": "./index.html",
   "lang": "pt-BR",

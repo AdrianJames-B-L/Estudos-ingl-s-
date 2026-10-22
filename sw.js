@@ -1,4 +1,4 @@
-const CACHE = "Estudos-v6";
+const CACHE = "Estudos-v7";
 const ARQUIVOS = [
     "./",
     "./index.html",
@@ -8,7 +8,8 @@ const ARQUIVOS = [
     "./manifest.json",
     "./img/favicon.ico",
     "./img/android-chrome-192x192.png",
-    "./img/android-chrome-512x512.png"
+    "./img/android-chrome-512x512.png",
+    "./colorsystem.js",
 ];
 
 self.addEventListener("install", e => {

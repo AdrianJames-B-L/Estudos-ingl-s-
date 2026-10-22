@@ -1,4 +1,4 @@
-const CACHE = "Estudos-v8";
+const CACHE = "Estudos-v9";
 const ARQUIVOS = [
     "./",
     "./index.html",
